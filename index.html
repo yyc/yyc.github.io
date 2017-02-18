@@ -2,50 +2,15 @@
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <style>
-      a{
-        font-size: large;
-        height: 100px;
-        color: grey;
-      }
-      .used{
-        background-color: yellow;
-      }
     </style>
+    <title>Yuchuan's WIP Webpage</title
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-      var id = -1;
-      var ROOT = "https://yycpresenter.herokuapp.com";
-      $(document).ready(function(){
-        $.get(ROOT+'/register', function(data){
-          console.log(data);
-          id = data;
-          $('.btn').click(function(){
-            console.log(this.id);
-            var self = this;
-            $.post(ROOT+'/option/'+id+'/'+this.id, function(data){
-              $('.btn').removeClass('used');
-              $(self).addClass('used');
-            });
-          });
-        }, "json");
-        if(window.location.hash == "#admin"){
-          window.setInterval(update, 2000);
-        }
-      });
-      function update(){
-        console.log("hi");
-        $.get(ROOT+'/data', function(data){
-          $("#admin").html(data);
-        }, "text");
-      }
     </script>
-    <a class="col-sm-6 col-md-2 col-lg-2 btn btn-lg glyphicon glyphicon-repeat" id="repeat"></a>
-    <a class="col-sm-6 col-md-2 col-lg-2 btn btn-lg glyphicon glyphicon-ok" id="ok"></a>
-    <a class="col-sm-6 col-md-2 col-lg-2 btn btn-lg glyphicon glyphicon-remove" id="remove"></a>
-    <a class="col-sm-6 col-md-2 col-lg-2 btn btn-lg glyphicon glyphicon-fast-forward" id="fast-forward"></a>
-    <div id="admin"></div>
+    <a href="https://github.com/yyc">My GitHub profile</a>
+    <a href="resume.pdf">My Resume</a>
   </body>
 </html>
